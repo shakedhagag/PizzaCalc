@@ -27,23 +27,14 @@ const updatePizzas = (currData: data): PizzaState => {
 };
 
 const reducer = (state: PizzaState, action: action) => {
-  switch (action.type) {
-    case "UPDATE_NUMOFPEOPLE": {
-      return updatePizzas({ ...state, numOfPeople: action.payload });
-      break;
-    }
-    case "UPDATE_NUMOFSLICES": {
-      return updatePizzas({ ...state, slices: action.payload });
-      break;
-    }
-    case "UPDATE_SLICES": {
-      return updatePizzas({ ...state, slicesPerPizza: action.payload });
-      break;
-    }
-    default: {
-      return { ...state };
-      break;
-    }
+  if (action.type === "UPDATE_NUMOFPEOPLE") {
+    return updatePizzas({ ...state, numOfPeople: action.payload });
+  }
+  if (action.type === "UPDATE_SLICES") {
+    return updatePizzas({ ...state, slices: action.payload });
+  }
+  if (action.type === "UPDATE_NUMOFSLICES") {
+    return updatePizzas({ ...state, slicesPerPizza: action.payload });
   }
 
   return state;

@@ -7,13 +7,15 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <main>
-      <header>
-        <h1>Pizza Calculator</h1>
-      </header>
-      <CalcScreen count={initialState.PizzasNeeded} />
-      <Calculator state={initialState} dispatch={dispatch} />;
-    </main>
+    <div className="center">
+      <main className="calc">
+        <header>
+          <h1>Pizza Calculator</h1>
+        </header>
+        <CalcScreen count={state.PizzasNeeded} />
+        <Calculator state={state} dispatch={dispatch} />;
+      </main>
+    </div>
   );
 };
 

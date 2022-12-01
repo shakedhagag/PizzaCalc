@@ -4,9 +4,9 @@ type Props = { count: number };
 
 const CalcScreen = (props: Props) => {
   return (
-    <section className="calc">
-      <p>{props.count}</p>
-      <p>Pizzas Needed</p>
+    <section>
+      <p className="count">{props.count}</p>
+      <p className="caption">Pizzas Needed</p>
     </section>
   );
 };
